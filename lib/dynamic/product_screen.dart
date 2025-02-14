@@ -152,7 +152,7 @@ class _product_screenState extends State<product_screen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Color(0xff187654),
-        title: const Center(child: Text("Product Details", style: TextStyle(color: Colors.white))),
+        title: const Center(child: Text("Product Details",style: TextStyle(color: Colors.white))),
         actions: [
           IconButton(
             icon: const Icon(Icons.share),
@@ -165,9 +165,7 @@ class _product_screenState extends State<product_screen> {
       body: FutureBuilder(
         future: getProductDetails(),
         builder: (context,  snapshot) {
-
           product = snapshot.data!;
-
           return Padding(
             padding: const EdgeInsets.all(16.0),
             child: Center(
@@ -202,11 +200,7 @@ class _product_screenState extends State<product_screen> {
                           Text("${product['price']}"),
                         ],
                       ),
-                      // const SizedBox(height: 16),
-                      // Padding(
-                      //   padding: const EdgeInsets.only(left: 20),
-                      //   child: Text("Description: ${product['desc']}"),
-                      // ),
+
                       const SizedBox(height: 16),
                       Center(
                         child: ElevatedButton(
@@ -217,7 +211,6 @@ class _product_screenState extends State<product_screen> {
                           },
                           child: Text(isInCart ? "Already in Cart" : "Add to Cart"),
                         ),
-
                       ),
                     ],
                   ),
@@ -227,10 +220,8 @@ class _product_screenState extends State<product_screen> {
           );
         },
       ),
-
     );
   }
-
   Future<void> createDynamicLink(String id) async {
     final DynamicLinkParameters dynamicLinkParams = DynamicLinkParameters(
       uriPrefix: 'https://authenthication.page.link',
@@ -247,7 +238,6 @@ class _product_screenState extends State<product_screen> {
 
     Share.share(shortUrl.toString());
   }
-
   Future<DocumentSnapshot<Map<String, dynamic>>> getProductDetails() async {
     final firebase = FirebaseFirestore.instance;
     var productData = await firebase.collection("product").doc(widget.id).get();
@@ -256,7 +246,6 @@ class _product_screenState extends State<product_screen> {
     });
     return productData;
   }
-
   Future<void> addToCart() async {
     final firebase = FirebaseFirestore.instance;
     await firebase.collection("card").doc(widget.id).set(product.data()!);
@@ -268,5 +257,4 @@ class _product_screenState extends State<product_screen> {
       MaterialPageRoute(builder: (context) => AddToCartScreen(id: widget.id)),
     );
   }
-
 }

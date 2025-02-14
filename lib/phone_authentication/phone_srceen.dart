@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import 'otp_verification.dart';
 class PhoneSrceen extends StatefulWidget {
   @override
@@ -72,7 +71,8 @@ class _PhoneSrceenState extends State<PhoneSrceen> {
                   print(" massge");
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text("Failed to verify phone number. Please try again.",style: TextStyle(color: Colors.red),),
+                      content: Text("Failed to verify phone number."
+                          " Please try again.",style: TextStyle(color: Colors.red),),
                     ),
                   );
                 }

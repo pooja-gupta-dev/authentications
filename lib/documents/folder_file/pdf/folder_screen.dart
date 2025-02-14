@@ -292,9 +292,9 @@ class _FolderScreenState extends State<FolderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurpleAccent,
+      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
-        backgroundColor: Colors.purpleAccent,
+        backgroundColor: Colors.blueGrey,
         title: const Center(
             child: Text("Files",)),
         actions: [

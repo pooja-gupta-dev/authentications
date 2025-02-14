@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../model.dart';
-import 'news_provider.dart';
 import 'news_service_class.dart';
 
 class NewsDetailsScreen extends StatefulWidget {
